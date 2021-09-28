@@ -16,8 +16,8 @@ img2.src = 'computer-pain-ting.png';
 //등장 캐릭터의 속성부터 object자료에 정리한다
 var dino = {
     //공룡 등장 좌표
-    x : 10,
-    y : 200,
+    x : 200,
+    y : 500,
     //공룡 사이즈
     width:50,
     height:50,
@@ -38,8 +38,8 @@ img1.src = 'JS-pain-ting.png';
 //장애물은 속성이 조금씩 다를 수 있기 때문에 class 를 사용한다
 class Cactus {
     constructor() {
-        this.x = 500;
-        this.y = 200;
+        this.x = 1400;
+        this.y = 500;
         this.width = 50;
         this.height = 50;
     }
@@ -86,7 +86,7 @@ function 프레임마다실행할거(){
             o.splice(i,1);
         }
         
-        a.x-=4;//장애물이 움직이도록
+        a.x-=8;//장애물이 움직이도록
         
         충돌하냐(dino,a);//공룡(dino)와 장애물(a (반복문을 a로 돌림)) 
         //충돌체크는 주인공과 모든 장애물의
@@ -98,14 +98,14 @@ function 프레임마다실행할거(){
 
     //프레임마다 y축을 건드려서 점프
     if (점프중 == true){
-        dino.y-=4;
+        dino.y-=8;
         점프timer+=2;
     }
     //점프를 다하고 밑으로 내려오도록 함
-    if (점프중 == false && dino.y < 200){
-        dino.y+=4;
+    if (점프중 == false && dino.y < 500){
+        dino.y+=8;
     }
-    if (점프timer > 80){
+    if (점프timer > 50){
         점프중 = false; 
         //점프 타이머를 리셋
         점프timer = 0;
